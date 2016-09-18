@@ -7,5 +7,16 @@
 Hello
 <br/>
 <a href="https://instagram.com/oauth/authorize/?client_id=f03b6b02c0a243afb3f5e67a6c1ec1a6&redirect_uri=https://metrigs.herokuapp.com/&response_type=code">Auth Link</a>
+
+<div id="container"></div>
+
+<script>
+$.get('https://api.instagram.com/v1/tags/fashion/media/recent?access_token=f03b6b02c0a243afb3f5e67a6c1ec1a6', function(d) {
+	$(#container).html(d);
+})
+.done(function(d) { alert('passed'); })
+.fail(function(d) { alert('failed'); });
+</script>
+
 </body>
 </html>
